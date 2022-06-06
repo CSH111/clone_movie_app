@@ -1,0 +1,22 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  outline: none;
+}
+
+body {
+  background-color: rgb(61, 61, 61);
+  color: rgb(255, 255, 255);
+}

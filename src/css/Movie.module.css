@@ -1,0 +1,16 @@
+.movie {
+  border: solid white 2px;
+  display: flex;
+  flex-direction: column;
+
+  width: 250px;
+  margin: 20px;
+  padding: 10px;
+}
+
+h2 {
+  font-size: medium;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
