@@ -1,5 +1,4 @@
 import Header from "../components/Header";
-import Movie from "../components/Movie";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 function Detail() {
@@ -15,36 +14,37 @@ function Detail() {
     setDetails(json.data.movie);
     setLoading(false);
   };
-  console.log(details);
   useEffect(() => {
     getDetails();
   }, []);
 
   return (
     <div>
-      {loading === true ? (
+      {loading ? (
         <h1>Loading..</h1>
       ) : (
         <div>
           <Header />
-          <Movie
-            key={details.id}
-            id={details.id}
-            title={details.title}
-            medium_cover_image={details.medium_cover_image}
-            genres={details.genres}
-            rating={details.rating}
-            year={details.year}
-          ></Movie>
+          <div>{details.rating}</div>
+          <div>{details.title_long}</div>
+          <div>{details.runtime}</div>
+
+          <ul>
+            {details.cast.map((zz) => (
+              <li>{zz.name}</li>
+            ))}
+          </ul>
+
+          <img src={details.medium_cover_image} alt="" />
           <p>{details.description_full}</p>
           <iframe
             width="560"
             height="315"
             src={`https://www.youtube.com/embed/${details.yt_trailer_code}`}
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       )}

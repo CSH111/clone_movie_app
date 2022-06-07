@@ -1,16 +1,80 @@
-.movie {
-  border: solid white 2px;
-  display: flex;
-  flex-direction: column;
-
-  width: 250px;
-  margin: 20px;
-  padding: 10px;
+:root {
+  --box-color-green: rgba(40, 199, 31, 0.822);
 }
 
+.movie {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  width: 220px;
+  height: 380px;
+}
+.imgBox {
+  position: relative;
+  overflow: hidden;
+  border: solid white 5px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+.imgBox.on {
+  border-color: var(--box-color-green);
+}
+.imgBox > img {
+  width: 100%;
+  height: 100%;
+}
+
+.imgBox > .addOn {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-100%, 0);
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15% 10%;
+  font-size: 25px;
+}
+.imgBox > .addOn.on {
+  transform: translate(0, 0);
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.imgBox > .addOn.on > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  pointer-events: auto;
+  background-color: var(--box-color-green);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 80%;
+  color: white;
+  border: 0;
+  transition: all 0.2s;
+}
+button:hover {
+  transform: scale(1.1);
+}
+button:active {
+  transform: scale(0.95);
+}
+.titleBox {
+  border: solid rgba(255, 255, 255, 0) 5px;
+}
 h2 {
   font-size: medium;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 2px 0;
 }
