@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "../css/Details.module.css";
+import Loading from "../components/Loading";
 function Detail() {
   const [details, setDetails] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,7 +24,7 @@ function Detail() {
       {loading ? (
         <div>
           <Header />
-          <h1>Loading..</h1>
+          <Loading />
         </div>
       ) : (
         <div>
@@ -32,29 +33,31 @@ function Detail() {
             <div className={styles.upperContents}>
               <img src={details.medium_cover_image} alt="" />
 
-              <div className={styles.infoAndCast}>
-                <div className={styles.info}>
-                  <h1>{details.title}</h1>
-                  <div>{details.year}</div>
-                  <ul className={styles.genres}>
-                    {details.genres.map((gr) =>
-                      gr != details.genres.slice(-1)[0] ? (
-                        <li key={gr}>{gr} /&nbsp;</li>
-                      ) : (
-                        <li key={gr}>{gr}</li>
-                      )
-                    )}
-                  </ul>
-                  <div>{details.rating} / 10</div>
-                  <div>{details.runtime} min</div>
-                </div>
-                <ul className={styles.cast}>
-                  {details.cast &&
-                    details.cast.map((actor) => (
-                      <li key={actor.name}>{actor.name}</li>
-                    ))}
+              <div className={styles.info}>
+                <h1>{details.title}</h1>
+                <ul>
+                  <li>{details.year}</li>
+                  <li>
+                    <ul className={styles.genres}>
+                      {details.genres.map((gr) =>
+                        gr != details.genres.slice(-1)[0] ? (
+                          <li key={gr}>{gr} /&nbsp;</li>
+                        ) : (
+                          <li key={gr}>{gr}</li>
+                        )
+                      )}
+                    </ul>
+                  </li>
+                  <li>{details.rating} / 10</li>
+                  <li>{details.runtime} min</li>
                 </ul>
               </div>
+              <ul className={styles.cast}>
+                {details.cast &&
+                  details.cast.map((actor) => (
+                    <li key={actor.name}>{actor.name}</li>
+                  ))}
+              </ul>
             </div>
             <div className={styles.plot}>
               <h3>Plot summary</h3>

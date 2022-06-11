@@ -3,7 +3,8 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 80px;
+  height: 9vh;
+  min-height: 30px;
 }
 h1 {
   display: flex;

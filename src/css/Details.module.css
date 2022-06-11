@@ -7,23 +7,32 @@
 }
 .upperContents {
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  margin: 5% 0;
+  grid-template-columns: 1fr 4fr 1fr;
+  margin: 4% 0;
 }
-.infoAndCast {
-  display: flex;
-  justify-content: space-between;
+.upperContents img {
+  margin-right: 20px;
+}
+
+.info h1 {
+  margin-bottom: 25px;
+}
+.upperContents > ul {
+  min-width: 160px;
+}
+
+.info > ul > li {
+  font-size: 20px;
+  margin-top: 10px;
 }
 .genres {
   display: flex;
-}
-.description {
-  border: solid white;
 }
 .plot {
   background-color: var(--color--dark--high);
   padding: var(--padding--innerbox);
   border-radius: var(--border-radius-box);
+  margin-bottom: 4%;
 }
 .plot p {
   text-align: justify;

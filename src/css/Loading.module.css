@@ -1,0 +1,9 @@
+.Loading {
+  height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.msg {
+  font-size: 50px;
+}
