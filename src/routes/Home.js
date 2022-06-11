@@ -21,7 +21,10 @@ function Home() {
   return (
     <div>
       {loading ? (
-        <h1>Loading...</h1>
+        <div>
+          <Header />
+          <h1>Loading..</h1>
+        </div>
       ) : (
         <div>
           <Header />

@@ -51,7 +51,7 @@
   align-items: center;
 }
 
-button {
+.imgBox button {
   pointer-events: auto;
   background-color: var(--box-color-green);
   padding: 10px 15px;
@@ -62,16 +62,16 @@ button {
   border: 0;
   transition: all 0.2s;
 }
-button:hover {
+.imgBox button:hover {
   transform: scale(1.1);
 }
-button:active {
+.imgBox button:active {
   transform: scale(0.95);
 }
 .titleBox {
   border: solid rgba(255, 255, 255, 0) 5px;
 }
-h2 {
+.titleBox h2 {
   font-size: medium;
   white-space: nowrap;
   overflow: hidden;

@@ -1,0 +1,31 @@
+:root {
+  --padding--innerbox: 15px;
+  --border-radius-box: 10px;
+}
+.contents {
+  padding: 0 12%;
+}
+.upperContents {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin: 5% 0;
+}
+.infoAndCast {
+  display: flex;
+  justify-content: space-between;
+}
+.genres {
+  display: flex;
+}
+.description {
+  border: solid white;
+}
+.plot {
+  background-color: var(--color--dark--high);
+  padding: var(--padding--innerbox);
+  border-radius: var(--border-radius-box);
+}
+.plot p {
+  text-align: justify;
+  margin-top: 10px;
+}

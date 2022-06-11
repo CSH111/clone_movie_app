@@ -1,5 +1,5 @@
 header {
-  background-color: #212121;
+  background-color: var(--color--dark--high);
   display: flex;
   justify-content: space-around;
   align-items: center;
