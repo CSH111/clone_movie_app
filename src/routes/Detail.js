@@ -1,8 +1,10 @@
 import Header from "../components/Header";
+import Loading from "../components/Loading";
+import Slide from "../components/Slide";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "../css/Details.module.css";
-import Loading from "../components/Loading";
+
 function Detail() {
   const [details, setDetails] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -63,20 +65,18 @@ function Detail() {
               <h3>Plot summary</h3>
               <p>{details.description_full}</p>
             </div>
-            <div>
-              {" "}
+            <div className={styles.trailerAndStealcuts}>
               <iframe
                 width="560"
-                height="315"
+                height="300"
                 src={`https://www.youtube.com/embed/${details.yt_trailer_code}`}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-              <img src={details.medium_screenshot_image1} alt="" />
-              <img src={details.medium_screenshot_image2} alt="" />
-              <img src="" alt="" />
+
+              <Slide smallSrc={details.medium_screenshot_image1} />
             </div>
           </div>
         </div>
