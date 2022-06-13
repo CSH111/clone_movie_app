@@ -65,18 +65,13 @@ function Detail() {
               <h3>Plot summary</h3>
               <p>{details.description_full}</p>
             </div>
-            <div className={styles.trailerAndStealcuts}>
-              <iframe
-                width="560"
-                height="300"
-                src={`https://www.youtube.com/embed/${details.yt_trailer_code}`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-
-              <Slide smallSrc={details.medium_screenshot_image1} />
+            <div>
+              <Slide
+                trailerSrc={`https://www.youtube.com/embed/${details.yt_trailer_code}`}
+                largeSrc1={details.large_screenshot_image1}
+                largeSrc2={details.large_screenshot_image2}
+                largeSrc3={details.large_screenshot_image3}
+              />
             </div>
           </div>
         </div>
