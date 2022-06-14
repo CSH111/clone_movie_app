@@ -68,9 +68,14 @@ function Detail() {
             <div>
               <Slide
                 trailerSrc={`https://www.youtube.com/embed/${details.yt_trailer_code}`}
-                largeSrc1={details.large_screenshot_image1}
-                largeSrc2={details.large_screenshot_image2}
-                largeSrc3={details.large_screenshot_image3}
+                mediumSrc1={details.medium_screenshot_image1}
+                mediumSrc2={details.medium_screenshot_image2}
+                mediumSrc3={details.medium_screenshot_image3}
+                largeSrcs={[
+                  details.large_screenshot_image1,
+                  details.large_screenshot_image2,
+                  details.large_screenshot_image3,
+                ]}
               />
             </div>
           </div>
