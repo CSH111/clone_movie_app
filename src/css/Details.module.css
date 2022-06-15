@@ -2,12 +2,15 @@
   --padding--innerbox: 15px;
   --border-radius-box: 10px;
 }
+h3 {
+  margin-bottom: 10px;
+}
 .contents {
   padding: 0 12%;
 }
 .upperContents {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 4fr 2fr;
   margin: 4% 0;
 }
 .upperContents img {
@@ -17,11 +20,25 @@
 .info h1 {
   margin-bottom: 25px;
 }
-.upperContents > ul {
-  min-width: 160px;
+.upperContents .cast {
+  background-color: var(--color--dark--high);
+  min-width: 250px;
+  padding: 15px;
+  border-radius: var(--border-radius-box);
+}
+.cast li {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.info > ul > li {
+.cast li img {
+  border-radius: 50%;
+  width: 45px;
+  height: auto;
+}
+
+.info ul li {
   font-size: 20px;
   margin-top: 10px;
 }

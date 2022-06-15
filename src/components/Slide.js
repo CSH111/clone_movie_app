@@ -116,9 +116,6 @@ function Slide({ trailerSrc, largeSrcs, mediumSrc1, mediumSrc2, mediumSrc3 }) {
           </button>
         </div>
       </div>
-      <button onClick={(event) => console.log("ddd")}>
-        <h1 onClick={"none"}>아</h1>
-      </button>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 :root {
   --color--dark--high: #212121;
+  --color--dark--low: rgb(61, 61, 61);
 }
 
 * {
@@ -7,6 +8,11 @@
   padding: 0px;
   box-sizing: border-box;
   font-weight: normal;
+}
+hr {
+  height: 2px;
+  background-color: var(--color--dark--low);
+  border: 0;
 }
 
 ul,
@@ -21,6 +27,6 @@ a {
 }
 
 body {
-  background-color: rgb(61, 61, 61);
+  background-color: var(--color--dark--low);
   color: rgb(255, 255, 255);
 }

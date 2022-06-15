@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <h1>
-        <Link className={styles.logo} to={"/"}>
+        <Link className={styles.logo} to={`${process.env.PUBLIC_URL}/`}>
           RECENT COOL MOVIES
         </Link>
       </h1>

@@ -4,6 +4,8 @@ import Slide from "../components/Slide";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "../css/Details.module.css";
+// import avatar from "../image/default_avatar";
+import avatar from "../image/default_avatar.jpg";
 
 function Detail() {
   const [details, setDetails] = useState([]);
@@ -54,17 +56,31 @@ function Detail() {
                   <li>{details.runtime} min</li>
                 </ul>
               </div>
-              <ul className={styles.cast}>
-                {details.cast &&
-                  details.cast.map((actor) => (
-                    <li key={actor.name}>{actor.name}</li>
-                  ))}
-              </ul>
+              <div>
+                <ul className={styles.cast}>
+                  <h3>Top Cast</h3>
+                  <hr />
+                  {details.cast &&
+                    details.cast.map((actor) => (
+                      <li key={actor.name}>
+                        {actor.url_small_image ? (
+                          <img src={actor.url_small_image} alt="" />
+                        ) : (
+                          <img src={avatar} alt="react" />
+                        )}
+
+                        <div>{actor.name}</div>
+                      </li>
+                    ))}
+                </ul>
+              </div>
             </div>
             <div className={styles.plot}>
               <h3>Plot summary</h3>
+              <hr />
               <p>{details.description_full}</p>
             </div>
+
             <div>
               <Slide
                 trailerSrc={`https://www.youtube.com/embed/${details.yt_trailer_code}`}
