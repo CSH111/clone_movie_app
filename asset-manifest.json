@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/clone_movie_app/static/css/main.266a88e1.css",
-    "main.js": "/clone_movie_app/static/js/main.10c9b180.js",
+    "main.css": "/clone_movie_app/static/css/main.62092495.css",
+    "main.js": "/clone_movie_app/static/js/main.10ff8bba.js",
     "index.html": "/clone_movie_app/index.html",
-    "main.266a88e1.css.map": "/clone_movie_app/static/css/main.266a88e1.css.map",
-    "main.10c9b180.js.map": "/clone_movie_app/static/js/main.10c9b180.js.map"
+    "main.62092495.css.map": "/clone_movie_app/static/css/main.62092495.css.map",
+    "main.10ff8bba.js.map": "/clone_movie_app/static/js/main.10ff8bba.js.map"
   },
   "entrypoints": [
-    "static/css/main.266a88e1.css",
-    "static/js/main.10c9b180.js"
+    "static/css/main.62092495.css",
+    "static/js/main.10ff8bba.js"
   ]
 }
