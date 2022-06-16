@@ -11,7 +11,6 @@ import {
 import styles from "../css/Slide.module.css";
 
 function Slide({ trailerSrc, largeSrcs, mediumSrc1, mediumSrc2, mediumSrc3 }) {
-  const [slider, setSlider] = useState();
   const [trailer, setTrailer] = useState();
   const [currentIndex, setCurrentIndex] = useState("");
   const [onOff, setonOff] = useState(false);
@@ -68,12 +67,11 @@ function Slide({ trailerSrc, largeSrcs, mediumSrc1, mediumSrc2, mediumSrc3 }) {
             onClick={callTrailer}
             alt=""
           ></img>
-          <span className={styles.playBtn}>
-            <span className={styles.playIcon}>
-              <FontAwesomeIcon icon={faCirclePlay} />
-            </span>
-            <span className={styles.playMsg}>Trailer</span>
-          </span>
+          <div className={styles.playBtn}>
+            <FontAwesomeIcon className={styles.playIcon} icon={faCirclePlay} />
+
+            <div className={styles.playMsg}>Trailer</div>
+          </div>
         </div>
         <img
           src={mediumSrc2}

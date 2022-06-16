@@ -1,11 +1,11 @@
-import Header from "../components/Header";
-import Loading from "../components/Loading";
-import Slide from "../components/Slide";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "../css/Details.module.css";
-// import avatar from "../image/default_avatar";
 import avatar from "../image/default_avatar.jpg";
+import Header from "../components/Header";
+import Loading from "../components/Loading";
+import Slide from "../components/Slide";
+import Box from "../components/Box";
 
 function Detail() {
   const [details, setDetails] = useState([]);
@@ -37,30 +37,15 @@ function Detail() {
             <div className={styles.upperContents}>
               <img src={details.medium_cover_image} alt="" />
 
-              <div className={styles.info}>
+              <div className={styles.title}>
                 <h1>{details.title}</h1>
-                <ul>
-                  <li>{details.year}</li>
-                  <li>
-                    <ul className={styles.genres}>
-                      {details.genres.map((gr) =>
-                        gr != details.genres.slice(-1)[0] ? (
-                          <li key={gr}>{gr} /&nbsp;</li>
-                        ) : (
-                          <li key={gr}>{gr}</li>
-                        )
-                      )}
-                    </ul>
-                  </li>
-                  <li>{details.rating} / 10</li>
-                  <li>{details.runtime} min</li>
-                </ul>
+                <div>{details.year}</div>
               </div>
-              <div>
-                <ul className={styles.cast}>
-                  <h3>Top Cast</h3>
-                  <hr />
-                  {details.cast &&
+              <div className={styles.castBox}>
+                <Box
+                  title={"Top Cast"}
+                  contents={
+                    details.cast &&
                     details.cast.map((actor) => (
                       <li key={actor.name}>
                         {actor.url_small_image ? (
@@ -71,17 +56,43 @@ function Detail() {
 
                         <div>{actor.name}</div>
                       </li>
-                    ))}
-                </ul>
+                    ))
+                  }
+                ></Box>
+              </div>
+              <div className={styles.genresAndInfo}>
+                <div className={styles.genres}>
+                  <Box
+                    title={"Genres"}
+                    contents={
+                      <ul>
+                        {details.genres.map((gr) => (
+                          <li key={gr}>{gr}</li>
+                        ))}
+                      </ul>
+                    }
+                  ></Box>
+                </div>
+                <Box
+                  title={"Info"}
+                  contents={
+                    <ul>
+                      <li>rating : {details.rating} / 10</li>
+                      <li>runtime : {details.runtime} min</li>
+                    </ul>
+                  }
+                ></Box>
+              </div>
+
+              <div className={styles.plot}>
+                <Box
+                  title={"Plot summary"}
+                  contents={details.description_full}
+                ></Box>
               </div>
             </div>
-            <div className={styles.plot}>
-              <h3>Plot summary</h3>
-              <hr />
-              <p>{details.description_full}</p>
-            </div>
 
-            <div>
+            <div className={styles.slide}>
               <Slide
                 trailerSrc={`https://www.youtube.com/embed/${details.yt_trailer_code}`}
                 mediumSrc1={details.medium_screenshot_image1}
